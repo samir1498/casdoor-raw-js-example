@@ -41,7 +41,7 @@ const authCfg = {
   clientId: 'faf613dea9e32f9f7e47',
   clientSecret: '37a12b8b6b896d98daa5395f50ffa6173d35ab03',
   certificate: cert,
-  orgName: 'app-built-in',
+  orgName: 'built-in',
 }
 const sdk = new SDK(authCfg);
 
