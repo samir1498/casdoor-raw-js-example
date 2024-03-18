@@ -57,7 +57,7 @@
         signOutBtn.addEventListener("click", signOut);
 
         if (!sessionStorage.getItem('token')) {
-          sdk.signin("http://localhost:9000").then(res => {
+          sdk.signin("http://localhost:8000").then(res => {
             sessionStorage.setItem('token', res.token);
           });
         }
