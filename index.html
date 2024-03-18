@@ -34,10 +34,10 @@
     //Import from cdn(you can choose the appropriate cdn source according to your needs), or just from the local(download the casdoor-js-sdk first)
     import SDK from 'https://unpkg.com/casdoor-js-sdk@0.10.0/lib/esm/sdk.js'
     const sdkConfig = {
-      serverUrl: "https://door.casdoor.com",
-      clientId: "0ba528121ea87b3eb54d",
-      appName: "app-casbin-oa",
-      organizationName: "casbin",
+      serverUrl: "http://localhost:8000",
+      clientId: "faf613dea9e32f9f7e47",
+      appName: "app-built-in",
+      organizationName: "built-in",
       redirectPath: "/",
     }
     window.sdk = new SDK(sdkConfig)
@@ -57,7 +57,7 @@
         signOutBtn.addEventListener("click", signOut);
 
         if (!sessionStorage.getItem('token')) {
-          sdk.signin("http://localhost:5000").then(res => {
+          sdk.signin("http://localhost:9000").then(res => {
             sessionStorage.setItem('token', res.token);
           });
         }
@@ -65,7 +65,7 @@
           let token = sessionStorage.getItem('token');
           if (!token) { return; }
           else {
-            return fetch(`http://localhost:5000/api/getUserInfo?token=${token}`).then(res => res.json());
+            return fetch(`http://localhost:9000/api/getUserInfo?token=${token}`).then(res => res.json());
           }
         }
 
@@ -80,7 +80,7 @@
 
         function signOut() {
           sessionStorage.removeItem("token");
-          window.location.href = "http://localhost:5000";
+          window.location.href = "http://localhost:9000";
         }
       };
       //get the element

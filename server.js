@@ -37,11 +37,11 @@ nCCJHBcAyFnm1hdvdwEdH33jDBjNB6ciotJZrf/3VYaIWSalADosHAgMWfXuWP+h
 `;
 
 const authCfg = {
-  endpoint: 'https://door.casdoor.com',
-  clientId: '0ba528121ea87b3eb54d',
-  clientSecret: '04f4ca22101529a3503d5a653a877b4e8403edf0',
+  endpoint: 'http://localhost:8000',
+  clientId: 'faf613dea9e32f9f7e47',
+  clientSecret: '37a12b8b6b896d98daa5395f50ffa6173d35ab03',
   certificate: cert,
-  orgName: 'casbin',
+  orgName: 'app-built-in',
 }
 const sdk = new SDK(authCfg);
 
@@ -70,6 +70,6 @@ const server = http.createServer((req,res)=>{
     }
 })
 
-server.listen('5000',()=>{
-  console.log('server listen at http://localhost:5000');
+server.listen('9000',()=>{
+  console.log('server listen at http://localhost:9000');
 })
